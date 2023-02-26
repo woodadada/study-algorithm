@@ -13,8 +13,6 @@ class Solution {
                     sb.append(Character.toUpperCase(aChar));
                 }else if(j % 2 == 1){
                     sb.append(Character.toLowerCase(aChar));
-                }else{
-                    sb.append(" ");
                 }
             }
             if(i != s1.length - 1) sb.append(" ");
