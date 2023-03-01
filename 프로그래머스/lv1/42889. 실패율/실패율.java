@@ -41,8 +41,8 @@ class Solution {
 //        Arrays.sort(fail, (o1, o2) -> Double.compare(o2[1], o1[1]));
 
 
-
-        Arrays.sort(fail, Comparator.<double[]>comparingDouble(a -> a[1]).reversed().thenComparingDouble(a -> a[0]));
+Arrays.sort(fail, (o1, o2) -> Double.compare(o2[1], o1[1]));
+        // Arrays.sort(fail, Comparator.<double[]>comparingDouble(a -> a[1]).reversed().thenComparingDouble(a -> a[0]));
         System.out.println("fail = " + Arrays.deepToString(fail));
         for (int i = 0; i < answer.length; i++) {
             answer[i] = (int)fail[i][0];
