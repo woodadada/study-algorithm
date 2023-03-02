@@ -2,43 +2,36 @@ import java.util.stream.Collectors;
 import java.util.Arrays;
 import java.util.Collections;
 class Solution {
-    public String solution(String x, String y) {
-        String answer = "";
-        int[] num1 = new int[10];
-        int[] num2 = new int[10];
-        int[] min = new int[10];
+    public String solution(String X, String Y) {
+        int[] countX = new int[10];
+        int[] countY = new int[10];
+        int[] countTwin = new int[10];
         int sum = 0;
-        StringBuilder build = new StringBuilder();
-        for (int j = 0; j < 10; j++) {
-            for (int i = 0; i < x.length(); i++) {
-                if (Character.getNumericValue(x.charAt(i)) == j) {
-                    num1[j]++;
-                }
-            }
-            for (int i = 0; i < y.length(); i++) {
-                if (Character.getNumericValue(y.charAt(i)) == j) {
-                    num2[j]++;
-                }
-            }
-        }
-        for (int j = 9; j >= 0; j--) {
-            min[j] = Math.min(num1[j], num2[j]);
-            for (int i = 0; i < min[j]; i++) {
-                build.append(j);
-            }
-        }
-        for (int i = 1; i < 10; i++) {
-            sum += min[i];
-        }
-        answer = build.toString();
-        if (answer.length() == 0) {
-            answer = "-1";
-        }
-        if (min[0] != 0) {
-            if (sum == 0)
-                answer = "0";
-        }
+        StringBuilder sb = new StringBuilder();
+        String answer = "";
 
-        return answer;
+        for (int i = 0; i < countX.length; i++) {
+            for (int j = 0; j < X.length(); j++) {
+                if(Character.getNumericValue(X.charAt(j)) == i){
+                    countX[i]++;
+                }
+            }
+            for (int j = 0; j < Y.length(); j++) {
+                if(Character.getNumericValue(Y.charAt(j)) == i){
+                    countY[i]++;
+                }
+            }
+        }
+        for (int i = countTwin.length - 1; i >= 0 ; i--) {
+            countTwin[i] = Math.min(countX[i], countY[i]);
+            sum += countTwin[i];
+            for (int j = 0; j < countTwin[i]; j++) {
+                sb.append(i);
+            }
+        }
+        if(countTwin[0] != 0 && sum - countTwin[0] == 0) return "0";
+        if(sum == 0) return "-1";
+        
+        return sb.toString();
     }
 }
