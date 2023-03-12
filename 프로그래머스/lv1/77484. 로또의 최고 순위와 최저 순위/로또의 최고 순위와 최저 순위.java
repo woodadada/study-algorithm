@@ -6,21 +6,16 @@ class Solution {
             if(lotto == 0){
                 bonus++;
             }
-        }
-        for (int win_num : win_nums) {
-            for (int lotto : lottos) {
-                if(win_num == lotto) {
+            for (int win_num : win_nums) {
+                if(lotto == win_num) {
                     count++;
                 }
             }
         }
-        if(count == 0 && bonus == 0){
-            count++;
-        } else if(count == 0) {
-            count++;
-            bonus--;
-        }
 
-        return new int[] {(7 - (count + bonus)), (7 - count)};
+        int high = count + bonus;
+        int row = count;
+
+        return new int[] {Math.min(7 - high, 6), Math.min(7 - row, 6)};
     }
 }
