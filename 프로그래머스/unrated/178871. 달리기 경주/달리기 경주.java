@@ -5,16 +5,16 @@ class Solution {
      
         Map<String, Integer> map = new HashMap<>();
         for (int i = 0; i < players.length; i++) {
-            map.put(players[i], i + 1);
+            map.put(players[i], i);
         }
 
         for (String calling : callings) {
             Integer index = map.get(calling);
             map.put(calling, index - 1);
-
-            String player = players[index - 2];
-            map.put(player, map.get(player) + 1);
-            swap(players, index - 1);
+            // 앞 선수
+            String player = players[index - 1];
+            map.put(player, index);
+            swap(players, index);
         }
         return players;
     }
