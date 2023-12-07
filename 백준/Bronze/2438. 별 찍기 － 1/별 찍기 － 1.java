@@ -6,14 +6,18 @@ public class Main {
         //System.setIn(new FileInputStream("src/text.txt"));
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
+        StringBuilder sb = new StringBuilder();
         StringTokenizer st = new StringTokenizer(br.readLine());
         String s1 = st.nextToken();
+
         int i = Integer.parseInt(s1);
         for (int j = 0; j < i; j++) {
             for (int i1 = 0; i1 <= j; i1++) {
-                System.out.print("*");
+                sb.append("*");
             }
-            System.out.println();
+            sb.append("\n");
         }
+
+        System.out.println(sb.toString());
     }
 }
