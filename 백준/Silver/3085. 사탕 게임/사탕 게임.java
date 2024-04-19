@@ -14,6 +14,7 @@ public class Main {
         int n = Integer.parseInt(br.readLine());
         map = new char[n][n];
 
+        // map 세팅
         for (int i = 0; i < n; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
             String s = st.nextToken();
@@ -23,15 +24,17 @@ public class Main {
             }
         }
         int max = 0;
+        // 행, 가로 탐색
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n - 1; j++) {
+            for (int j = 0; j < n - 1; j++) { // 행 - 1
                 swap(i, j, i, j + 1);
                 max = Math.max(max, search(n));
                 swap(i, j, i, j + 1);
             }
         }
 
-        for (int i = 0; i < n - 1; i++) {
+        // 열, 세로 탐색
+        for (int i = 0; i < n - 1; i++) { // 열 - 1
             for (int j = 0; j < n; j++) {
                 swap(i, j, i + 1, j);
                 max = Math.max(max, search(n));
@@ -40,6 +43,7 @@ public class Main {
         }
         System.out.println(max);
     }
+    // 인접 위치 교환
     static void swap(int x1, int y1, int x2, int y2) {
         char temp = map[x1][y1];
         map[x1][y1] = map[x2][y2];
@@ -65,11 +69,12 @@ public class Main {
         for(int i = 0; i < n; i++) {
             int count = 1;
             for(int j = 0; j < n - 1; j++) {
-                if(map[j][i] == map[j + 1][i])
+                if(map[j][i] == map[j + 1][i]) { // j를 앞으로 위치시켜서 열 탐색
                     count++;
-                else
+                    max = Math.max(max, count);
+                } else {
                     count = 1;
-                max = Math.max(max, count);
+                }
             }
         }
         return max;
