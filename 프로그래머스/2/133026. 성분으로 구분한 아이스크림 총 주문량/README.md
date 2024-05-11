@@ -16,11 +16,11 @@ Empty
 
 ### 제출 일자
 
-2024년 05월 11일 17:43:46
+2024년 05월 11일 17:46:28
 
 ### 문제 설명
 
-<p data-sider-select-id="d1867ba8-4bd6-427e-89bc-3a460fbb5660">다음은 아이스크림 가게의 상반기 주문 정보를 담은 <code>FIRST_HALF</code> 테이블과 아이스크림 성분에 대한 정보를 담은 <code>ICECREAM_INFO</code> 테이블입니다. <code>FIRST_HALF</code> 테이블 구조는 다음과 같으며, <code>SHIPMENT_ID</code>, <code>FLAVOR</code>, <code>TOTAL_ORDER</code> 는 각각 아이스크림 공장에서 아이스크림 가게까지의 출하 번호, 아이스크림 맛, 상반기 아이스크림 총주문량을 나타냅니다. <code>FIRST_HALF</code> 테이블의 기본 키는 <code>FLAVOR</code>입니다.</p>
+<p>다음은 아이스크림 가게의 상반기 주문 정보를 담은 <code>FIRST_HALF</code> 테이블과 아이스크림 성분에 대한 정보를 담은 <code>ICECREAM_INFO</code> 테이블입니다. <code>FIRST_HALF</code> 테이블 구조는 다음과 같으며, <code>SHIPMENT_ID</code>, <code>FLAVOR</code>, <code>TOTAL_ORDER</code> 는 각각 아이스크림 공장에서 아이스크림 가게까지의 출하 번호, 아이스크림 맛, 상반기 아이스크림 총주문량을 나타냅니다. <code>FIRST_HALF</code> 테이블의 기본 키는 <code>FLAVOR</code>입니다.</p>
 <table class="table">
         <thead><tr>
 <th style="text-align: left">NAME</th>
@@ -45,7 +45,7 @@ Empty
 </tr>
 </tbody>
       </table>
-<p data-sider-select-id="5125a73b-ed45-42bf-8ee2-424cf1db8235"><code>ICECREAM_INFO</code> 테이블 구조는 다음과 같으며, <code>FLAVOR</code>, <code>INGREDITENT_TYPE</code> 은 각각 아이스크림 맛, 아이스크림의 성분 타입을 나타냅니다. <code>INGREDIENT_TYPE</code>에는 아이스크림의 주 성분이 설탕이면 <code>sugar_based</code>라고 입력되고, 아이스크림의 주 성분이 과일이면 <code>fruit_based</code>라고 입력됩니다. <code>ICECREAM_INFO</code>의 기본 키는 <code>FLAVOR</code>입니다. <code>ICECREAM_INFO</code>테이블의 <code>FLAVOR</code>는 <code>FIRST_HALF</code> 테이블의  <code>FLAVOR</code>의 외래 키입니다.</p>
+<p><code>ICECREAM_INFO</code> 테이블 구조는 다음과 같으며, <code>FLAVOR</code>, <code>INGREDITENT_TYPE</code> 은 각각 아이스크림 맛, 아이스크림의 성분 타입을 나타냅니다. <code>INGREDIENT_TYPE</code>에는 아이스크림의 주 성분이 설탕이면 <code>sugar_based</code>라고 입력되고, 아이스크림의 주 성분이 과일이면 <code>fruit_based</code>라고 입력됩니다. <code>ICECREAM_INFO</code>의 기본 키는 <code>FLAVOR</code>입니다. <code>ICECREAM_INFO</code>테이블의 <code>FLAVOR</code>는 <code>FIRST_HALF</code> 테이블의  <code>FLAVOR</code>의 외래 키입니다.</p>
 <table class="table">
         <thead><tr>
 <th style="text-align: left">NAME</th>
@@ -69,13 +69,13 @@ Empty
 
 <h5>문제</h5>
 
-<p data-sider-select-id="512a07cb-5d5d-4e5e-9eaf-b0b8db766200">상반기 동안 각 아이스크림 성분 타입과 성분 타입에 대한 아이스크림의 총주문량을 총주문량이 작은 순서대로 조회하는 SQL 문을 작성해주세요. 이때 총주문량을 나타내는 컬럼명은 TOTAL_ORDER로 지정해주세요.</p>
+<p>상반기 동안 각 아이스크림 성분 타입과 성분 타입에 대한 아이스크림의 총주문량을 총주문량이 작은 순서대로 조회하는 SQL 문을 작성해주세요. 이때 총주문량을 나타내는 컬럼명은 TOTAL_ORDER로 지정해주세요.</p>
 
 <hr>
 
 <h5>예시</h5>
 
-<p>예를 들어 <code data-sider-select-id="b5379a9e-a4e1-49b4-b4a2-333c5939e4f6">FIRST_HALF</code> 테이블이 다음과 같고</p>
+<p>예를 들어 <code>FIRST_HALF</code> 테이블이 다음과 같고</p>
 <table class="table">
         <thead><tr>
 <th style="text-align: left">SHIPMENT_ID</th>
