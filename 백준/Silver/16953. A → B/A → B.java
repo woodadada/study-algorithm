@@ -5,39 +5,36 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 public class Main {
-    public static long A, B;
+    static int A, B;
 
     public static void main(String[] args) throws IOException {
         //System.setIn(new FileInputStream("src/text.txt"));
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        A = Long.parseLong(st.nextToken());
-        B = Long.parseLong(st.nextToken());
-
-        long result = bfs();
-
-        System.out.println(result);
+        A = Integer.parseInt(st.nextToken());
+        B = Integer.parseInt(st.nextToken());
+        long bfs = bfs();
+        System.out.println(bfs);
     }
 
-    public static long bfs() {
+    static long bfs() {
         Queue<long[]> queue = new LinkedList<>();
-        queue.offer(new long[] {A, 1}); // 시작 숫자, count
+        queue.offer(new long[] {A, 1});
 
-        while(!queue.isEmpty()) {
-            long[] node = queue.poll();
-            long num = node[0];
-            long count = node[1];
+        while (!queue.isEmpty()) {
+            long[] poll = queue.poll();
+            long num = poll[0];
+            long count = poll[1];
 
+            // 탈출 조건
+            if(num == B) return count;
+            // 무시
             if(num > B) continue;
 
-            if(num == B) {
-                return count;
-            }
-
-            for (int i = 1; i <= 2; i++) {
-                if(i == 1) {
+            for (int i = 0; i < 2; i++) {
+                if (i == 0) {
                     queue.offer(new long[] {num * 2, count + 1});
-                } else {
+                } else { // 마지막 자리에 1 추가
                     queue.offer(new long[] {num * 10 + 1, count + 1});
                 }
             }
